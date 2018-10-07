@@ -22,7 +22,7 @@ let check = ()=> {
         }
         count++;
     }
-    confirm(`C'est juste tu as trouvé en ${count} coups`);
+    confirm(`Exact, vous avez trouvé en ${count} coups`);
 }
 
 check();
