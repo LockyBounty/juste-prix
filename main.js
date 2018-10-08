@@ -11,7 +11,7 @@ let check = ()=> {
     let prix = aleatoire();
     let count = 0;
     while(prixEntree !== prix) {
-        prixEntree = prompt('Entrez un nombre !');
+        prixEntree = prompt(`Entrez un nombre entre 20 et 80 !\nTentatives : ${count}/6`);
         if(prixEntree < prix) {
             alert(`C'EST PLUS !`);
         } else if(prixEntree > prix) {
@@ -21,8 +21,15 @@ let check = ()=> {
             break;
         }
         count++;
+        if (count>6){
+            break;
+        }
+
     }
-    confirm(`Exact, vous avez trouvé en ${count} coups`);
+    if (count>6){
+        confirm(`Lamentable, vous n'avez pas pu trouver en 6 coups...`);
+    } else {
+    confirm(`Exact, vous avez trouvé en ${count} coups`);}
 }
 
 check();
